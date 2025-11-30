@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ortsgruppe Luckenwalde e.V. - Anglerverein</title>
+    
+        
+    <style>
+        /* FARB PALETTE */
+        :root {
+            --color-primary: #004d40; /* Dunkles Blaugrün (Header) */
+            --color-secondary: #795548; /* Dunkelbraun (Navigation) */
+            --color-background: #e0f2f1; /* Hintergrundfarbe */
+            --color-text: #333;
+        }
+
+        body {
+            background-color: var(--color-background);
+            margin: 0; 
+            padding: 0; 
+            font-family: sans-serif; /* Standard-Schriftart */
+            color: var(--color-text);
+        }
+        
+        /* HEADER (Kopfbereich) */
+        .header-container {
+            background-color: var(--color-primary);
+            padding: 15px 30px; 
+            display: flex;
+            align-items: center; 
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Leichter Schatten beibehalten */
+        }
+        
+        h1 {
+            color: white; 
+            font-size: 2.2em;
+            margin: 0;
+            /* Keine custom fonts */
+        }
+        
+        /* NAVIGATION (Reiter) */
+        .nav-bar {
+            background-color: var(--color-secondary);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .nav-bar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav-bar li {
+            margin: 0;
+            /* overflow: visible entfernt */
+        }
+        
+        .nav-bar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            font-size: 1.1em;
+            /* Transition entfernt */
+        }
+        
+        /* SIMPLER HOVER EFFEKT */
+        .nav-bar a:hover {
+            background-color: #5d4037; /* Einfacher Farbwechsel bei Hover */
+            /* Animationen entfernt */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+                <h1>Ortsgruppe Luckenwalde e.V.</h1>
+    </div>
+
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/Haubtseite/">Startseite</a></li>
+            <li><a href="#">Ansprechpartner</a></li> 
+            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/Vereinsgew-sser/">Vereinsgewässer</a></li>
+            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/Termine/">Termine</a></li>
+        </ul>
+    </nav>
+
+    </body>
+</html>
