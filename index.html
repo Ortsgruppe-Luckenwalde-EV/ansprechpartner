@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ortsgruppe Luckenwalde e.V. - Anglerverein</title>
+    <title>Ortsgruppe Luckenwalde e.V. - Kontakt</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
         /* FARB PALETTE */
         :root {
-            --color-primary: #004d40; /* Dunkles Blaugrün (Header) */
-            --color-secondary: #795548; /* Dunkelbraun (Navigation) */
+            --color-primary: #004d40; /* Dunkles Blaugrün (Header & Akzent) */
+            --color-secondary: #795548; /* Dunkelbraun (Navigation & Akzent) */
             --color-background: #e0f2f1; /* Helles Aquamarin (Basis) */
             --color-text: #333;
         }
@@ -50,7 +50,7 @@
             object-fit: cover; 
         }
 
-        /* NAVIGATION (Reiter) */
+        /* NAVIGATION */
         .nav-bar {
             background-color: var(--color-secondary);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -88,7 +88,72 @@
             border-radius: 4px; 
         }
 
-        /* Die Styles für den Inhalt sind zwar noch im <style> Block, aber der zugehörige <div> wurde entfernt. */
+        /* NEUES COOLE GRID-LAYOUT FÜR KONTAKTE (Inspiriert von Ihrem Bild) */
+        
+        .main-content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsives Grid */
+            gap: 30px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        /* KARTEN-STYLING (Für Kontaktboxen) */
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid var(--color-primary); /* Akzentlinie oben */
+            transition: transform 0.3s ease-in-out;
+            /* Subtiler Glow-Effekt bei Hover */
+            animation: none; /* Deaktiviert alte Animationen */
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            color: var(--color-primary);
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5em;
+            border-bottom: 2px solid var(--color-background);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .button.primary {
+            background-color: var(--color-secondary);
+            color: white;
+        }
+
+        .button.primary:hover {
+            background-color: #5d4037;
+        }
+
+        /* RESPONSIVE DESIGN (HANDY-ANSICHT) */
+        @media (max-width: 650px) {
+            .header-container { flex-direction: column; padding: 15px 10px; }
+            .logo { height: 40px; margin-right: 0; margin-bottom: 10px; }
+            h1 { font-size: 1.8em; text-align: center; }
+            .main-content-grid { padding: 20px; gap: 20px; }
+            .nav-bar ul { flex-direction: column; align-items: stretch; }
+            .nav-bar a { padding: 12px 15px; text-align: center; transform: none; }
+            .nav-bar a:hover { transform: none; }
+        }
         
     </style>
 </head>
@@ -113,5 +178,30 @@
         </ul>
     </nav>
 
+    <main class="main-content-grid">
+        
+        <div class="card contact-main">
+            <h2>🎣 Vorstand / 1. Ansprechpartner</h2>
+            <p><strong>Name:</strong> [IHR VORNAME NACHNAME]</p>
+            <p><strong>Funktion:</strong> Erster Vorsitzender</p>
+            <p><strong>E-Mail:</strong> vorstand@[IHRE DOMAIN].de</p>
+            <a href="mailto:vorstand@ortsgruppe-lkd.de" class="button primary">Nachricht senden</a>
+        </div>
+
+        <div class="card contact-details">
+            <h2>✉️ Geschäftsstelle & Adresse</h2>
+            <p><strong>Adresse:</strong> [Musterstraße 1]</p>
+            <p><strong>Ort:</strong> 14949 Luckenwalde</p>
+            <p><strong>Hinweis:</strong> Briefverkehr bevorzugt.</p>
+        </div>
+
+        <div class="card map-placeholder">
+            <h2>📞 Telefon & Termine</h2>
+            <p><strong>Vereinstelefon:</strong> (03371) [IHRE TELEFONNUMMER]</p>
+            <p><strong>Erreichbarkeit:</strong> Nur während der Sprechzeiten (siehe Termine).</p>
+            <a href="https://ortsgruppe-luckenwalde-ev.github.io/Termine/" class="button primary">Termine prüfen</a>
+        </div>
+
+    </main>
     </body>
 </html>
