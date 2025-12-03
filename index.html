@@ -3,36 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wird bearbeitet - Ortsgruppe Luckenwalde e.V.</title> 
-    
-    <meta name="google-site-verification" content="1uPlcG-FwYfYHbufDpWkg_zQlgtFXc_Qg14S5ehVZmU" />
+    <title>Ortsgruppe Luckenwalde e.V. - Kontakt</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
+        /* FARB PALETTE */
         :root {
-            --color-primary: #004d40;
+            --color-primary: #004d40; /* Dunkles Blaugrün (Header & Akzent) */
+            --color-secondary: #795548; /* Dunkelbraun (Navigation & Akzent) */
+            --color-background: #e0f2f1; /* Helles Aquamarin (Basis) */
             --color-text: #333;
         }
 
         body {
-            background-color: white; 
+            background-color: var(--color-background);
             margin: 0;
             padding: 0; 
             font-family: 'Roboto', sans-serif;
             color: var(--color-text);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
         
+        /* HEADER (Kopfbereich) */
         .header-container {
             background-color: var(--color-primary);
             padding: 15px 30px; 
             display: flex;
             align-items: center; 
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-            flex-shrink: 0;
         }
         
         h1 {
@@ -52,55 +50,108 @@
             object-fit: cover; 
         }
 
-        .content {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 30px; 
+        /* NAVIGATION */
+        .nav-bar {
+            background-color: var(--color-secondary);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-
-        .maintenance-box {
-            max-width: 600px; 
-            padding: 40px; 
-            background-color: #f7f7f7;
-            border: 2px solid var(--color-primary);
-            border-radius: 12px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            color: var(--color-text);
-        }
-
-        .maintenance-box h2 {
-            color: var(--color-primary);
-            font-family: 'Oswald', sans-serif;
-            font-size: 2em;
-            margin-top: 0;
+        
+        .nav-bar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
         }
         
-        @media (max-width: 650px) {
-            .header-container { 
-                flex-direction: column; 
-                padding: 15px 10px; 
-            }
-            .logo { 
-                height: 40px; 
-                margin-right: 0; 
-                margin-bottom: 10px; 
-            }
-            h1 { 
-                font-size: 1.8em; 
-                text-align: center; 
-            }
-            
-            .maintenance-box {
-                padding: 30px 20px;
-                max-width: 90%;
-            }
+        .nav-bar li {
+            margin: 0;
+            overflow: visible; 
+        }
+        
+        .nav-bar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.3s ease-in-out, box-shadow 0.3s;
+        }
+        
+        /* APPLE-STYLE HOVER EFFEKT */
+        .nav-bar a:hover {
+            background-color: #5d4037; 
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+            border-radius: 4px; 
+        }
 
-            .maintenance-box h2 {
-                font-size: 1.5em;
-            }
+        /* NEUES COOLE GRID-LAYOUT FÜR KONTAKTE */
+        
+        .main-content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsives Grid */
+            gap: 30px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        /* KARTEN-STYLING (Für Kontaktboxen) */
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid var(--color-primary); /* Akzentlinie oben */
+            transition: transform 0.3s ease-in-out;
+            animation: none;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            color: var(--color-primary);
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5em;
+            border-bottom: 2px solid var(--color-background);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .button.primary {
+            background-color: var(--color-secondary);
+            color: white;
+        }
+
+        .button.primary:hover {
+            background-color: #5d4037;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 650px) {
+            .header-container { flex-direction: column; padding: 15px 10px; }
+            .logo { height: 40px; margin-right: 0; margin-bottom: 10px; }
+            h1 { font-size: 1.8em; text-align: center; }
+            .main-content-grid { padding: 20px; gap: 20px; }
+            .nav-bar ul { flex-direction: column; align-items: stretch; }
+            .nav-bar a { padding: 12px 15px; text-align: center; transform: none; }
+            .nav-bar a:hover { transform: none; }
         }
         
     </style>
@@ -115,18 +166,42 @@
         <h1>Ortsgruppe Luckenwalde e.V.</h1>
     </div>
 
-    <div class="content">
-        <div class="maintenance-box">
-            <h2>Wird bearbeitet!</h2>
-            <p>
-                Diese Seite wird derzeit für dich überarbeitet und optimiert. Wir arbeiten daran, dir bald alle Informationen zur Verfügung zu stellen.
-            </p>
-            <p>
-                <strong>Vielen Dank für deine Geduld!</strong>
-            </p>
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/Haubtseite/">Startseite</a></li>
+            
+            <li><a href="#">Ansprechpartner</a></li>
+            
+            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/Vereinsgew-sser/">Vereinsgewässer</a></li>
+            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/Termine/">Termine</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content-grid">
+        
+        <div class="card contact-main">
+            <h2>🎣 Vorstand / Ansprechpartner</h2>
+            <p><strong>Vorsitzender (Thomas Meske):</strong></p>
+            <p><a href="tel:+4916095611230">0160 - 956 11 230</a></p>
+            <p><strong>Schatzmeister (Jack Holznagel):</strong></p>
+            <p><a href="tel:+4915165111237">0151 - 651 11 237</a></p>
+            <a href="tel:+4916095611230" class="button primary">Vorsitzenden anrufen</a>
         </div>
-    </div>
 
-</body>
+        <div class="card contact-details">
+            <h2>✉️ Postanschrift / Postkasten</h2>
+            <p>Jack Holznagel</p>
+            <p>Anglerverein Ortsgruppe Luckenwalde e.V.</p>
+            <p>Am Vordersee 2</p>
+            <p>14947 Nuthe Urstromtal</p>
+        </div>
+
+        <div class="card map-placeholder">
+            <h2>📧 E-Mail Kontakt</h2>
+            <p><strong>E-Mail (Jack Holznagel):</strong> <a href="mailto:jack-holznagel@web.de">jack-holznagel@web.de</a></p>
+            <p>Bitte nutzen Sie vorrangig die angegebenen Telefonnummern für dringende Anfragen.</p>
+        </div>
+
+    </main>
+    </body>
 </html>
-
