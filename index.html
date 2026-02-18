@@ -1,207 +1,572 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ortsgruppe Luckenwalde e.V. - Kontakt</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    
+    <title>Ortsgruppe Luckenwalde e.V. - Ansprechpartner</title>
+    <meta name="description"
+        content="Kontaktinformationen und Ansprechpartner des Anglerverein Ortsgruppe Luckenwalde e.V. - Vorstand und wichtige Kontakte.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
     <style>
-        /* FARB PALETTE */
-        :root {
-            --color-primary: #004d40; /* Dunkles Blaugrün (Header & Akzent) */
-            --color-secondary: #795548; /* Dunkelbraun (Navigation & Akzent) */
-            --color-background: #e0f2f1; /* Helles Aquamarin (Basis) */
-            --color-text: #333;
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Oswald', sans-serif;
         }
 
         body {
-            background-color: var(--color-background);
-            margin: 0;
-            padding: 0; 
-            font-family: 'Roboto', sans-serif;
-            color: var(--color-text);
-        }
-        
-        /* HEADER (Kopfbereich) */
-        .header-container {
-            background-color: var(--color-primary);
-            padding: 15px 30px; 
-            display: flex;
-            align-items: center; 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-        }
-        
-        h1 {
-            color: white; 
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.2em;
-            margin: 0;
-            letter-spacing: 1px;
-        }
-        
-        .logo {
-            height: 60px; 
-            width: auto;
-            border-radius: 50%; 
-            margin-right: 20px; 
-            border: 3px solid white; 
-            object-fit: cover; 
+            background: linear-gradient(135deg, #0a1e2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        /* NAVIGATION */
-        .nav-bar {
-            background-color: var(--color-secondary);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        
-        .nav-bar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .nav-bar li {
-            margin: 0;
-            overflow: visible; 
-        }
-        
-        .nav-bar a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 15px 25px;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.1em;
-            transition: background-color 0.3s, transform 0.3s ease-in-out, box-shadow 0.3s;
-        }
-        
-        /* APPLE-STYLE HOVER EFFEKT */
-        .nav-bar a:hover {
-            background-color: #5d4037; 
-            transform: translateY(-2px); 
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
-            border-radius: 4px; 
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(16, 185, 230, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(1, 167, 74, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(1, 135, 134, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+            animation: gradient-shift 8s ease infinite;
         }
 
-        /* NEUES COOLE GRID-LAYOUT FÜR KONTAKTE */
-        
-        .main-content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsives Grid */
-            gap: 30px;
-            padding: 40px;
-            max-width: 1200px;
-            margin: 30px auto;
+        @keyframes gradient-shift {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
         }
 
-        /* KARTEN-STYLING (Für Kontaktboxen) */
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #1fb9e6, transparent);
+            transition: left 0.4s ease;
+        }
+
+        .nav-link:hover::after {
+            left: 100%;
+        }
+
         .card {
-            background-color: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            border-top: 5px solid var(--color-primary); /* Akzentlinie oben */
-            transition: transform 0.3s ease-in-out;
-            animation: none;
+            background: rgba(20, 30, 48, 0.7);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(31, 185, 230, 0.4);
+            box-shadow: 0 20px 60px rgba(31, 185, 230, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            color: #e8e8e8;
         }
 
         .card:hover {
+            box-shadow: 0 30px 80px rgba(31, 185, 230, 0.4), inset 0 1px 0 rgba(31, 185, 230, 0.2);
+            border-color: rgba(31, 185, 230, 0.8);
+            background: rgba(20, 40, 60, 0.8);
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .card h2 {
-            color: var(--color-primary);
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.5em;
-            border-bottom: 2px solid var(--color-background);
-            padding-bottom: 10px;
-            margin-top: 0;
+        .btn {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #01a74a 0%, #01796f 100%);
         }
 
-        .button {
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(31, 185, 230, 0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #01796f 0%, #005555 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(31, 185, 230, 0.5);
+        }
+
+        .gallery-img {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            filter: brightness(0.8) saturate(1.2);
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.08) rotateY(-5deg);
+            filter: brightness(1.2) saturate(1.4);
+            box-shadow: 0 0 30px rgba(31, 185, 230, 0.6);
+        }
+
+        .fish-animation {
+            width: 60px;
+            height: 40px;
+            background: radial-gradient(ellipse at 30% 30%, #1fb9e6, #01a74a);
+            border-radius: 50%;
+            position: fixed;
+            filter: blur(1px) drop-shadow(0 0 12px rgba(31, 185, 230, 0.8));
+            clip-path: polygon(70% 0%, 100% 30%, 100% 70%, 70% 100%, 0% 50%);
+            animation: swim-animation 8s ease-in-out infinite;
+        }
+
+        @keyframes swim-animation {
+            0% {
+                transform: translateX(0) translateY(0) scaleX(1);
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(100px) translateY(20px) scaleX(-1);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(0) rotateX(0);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100px) rotateX(45deg);
+                opacity: 0;
+            }
+        }
+
+        .bubble {
+            animation: float-up 2s ease-out forwards;
+        }
+
+        .wave-hand {
             display: inline-block;
-            padding: 10px 20px;
-            margin-top: 15px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: background-color 0.3s;
+            animation: wave 0.6s ease-in-out infinite;
+            transform-origin: 70% 70%;
         }
 
-        .button.primary {
-            background-color: var(--color-secondary);
-            color: white;
+        @keyframes wave {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(14deg);
+            }
+
+            50% {
+                transform: rotate(-8deg);
+            }
+
+            75% {
+                transform: rotate(14deg);
+            }
         }
 
-        .button.primary:hover {
-            background-color: #5d4037;
+        .glow-text {
+            color: #1fb9e6;
+            text-shadow: 0 0 30px rgba(31, 185, 230, 0.5), 0 0 60px rgba(31, 185, 230, 0.2);
         }
 
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 650px) {
-            .header-container { flex-direction: column; padding: 15px 10px; }
-            .logo { height: 40px; margin-right: 0; margin-bottom: 10px; }
-            h1 { font-size: 1.8em; text-align: center; }
-            .main-content-grid { padding: 20px; gap: 20px; }
-            .nav-bar ul { flex-direction: column; align-items: stretch; }
-            .nav-bar a { padding: 12px 15px; text-align: center; transform: none; }
-            .nav-bar a:hover { transform: none; }
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #1fb9e6, transparent);
+            margin: 2rem 0;
+            box-shadow: 0 0 15px rgba(31, 185, 230, 0.5);
         }
-        
+
+        header {
+            background: linear-gradient(135deg, rgba(15, 52, 96, 0.98) 0%, rgba(1, 87, 115, 0.98) 100%) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid rgba(31, 185, 230, 0.5);
+            box-shadow: 0 10px 40px rgba(31, 185, 230, 0.2);
+        }
+
+        nav {
+            background: linear-gradient(135deg, rgba(26, 60, 110, 0.95) 0%, rgba(15, 52, 96, 0.95) 100%) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(31, 185, 230, 0.3);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background: linear-gradient(135deg, rgba(15, 52, 96, 0.98) 0%, rgba(1, 87, 115, 0.98) 100%) !important;
+            backdrop-filter: blur(10px);
+            border-top: 3px solid rgba(31, 185, 230, 0.5);
+            box-shadow: 0 -10px 40px rgba(31, 185, 230, 0.2);
+        }
+
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: rgba(20, 30, 48, 0.7);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(31, 185, 230, 0.2);
+            border: 2px solid rgba(31, 185, 230, 0.4);
+        }
+
+        .styled-table thead tr {
+            background-color: rgba(15, 52, 96, 0.9);
+            color: #1fb9e6;
+        }
+
+        .styled-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(31, 185, 230, 0.5);
+        }
+
+        .styled-table td {
+            padding: 15px;
+            color: #e8e8e8;
+            border-bottom: 1px solid rgba(31, 185, 230, 0.2);
+        }
+
+        .styled-table tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        .styled-table tbody tr:hover {
+            background-color: rgba(31, 185, 230, 0.1);
+            transform: scale(1.005);
+            box-shadow: 0 0 20px rgba(31, 185, 230, 0.3);
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: rgba(1, 167, 74, 0.05);
+        }
+
+        .styled-table tbody tr.empty-state td {
+            text-align: center;
+            font-style: italic;
+            color: #999;
+            padding: 50px 15px;
+        }
     </style>
 </head>
-<body>
 
-    <div class="header-container">
-        <img class="logo" 
-             src="fisch.jpeg" 
-             alt="Logo KAV Luckenwalde">
-        
-        <h1>Ortsgruppe Luckenwalde e.V.</h1>
+<body class="min-h-screen">
+    <div class="content-wrapper">
+        <!-- Fish Animation Elements -->
+        <div class="fish-animation" style="top: 20%; left: 5%;"></div>
+        <div class="fish-animation" style="top: 30%; right: 10%; animation-delay: 2s;"></div>
+        <div class="fish-animation" style="bottom: 25%; left: 15%; animation-delay: 4s;"></div>
+        <div class="fish-animation" style="bottom: 15%; right: 20%; animation-delay: 6s;"></div>
+
+        <!-- Header -->
+        <header class="bg-[#0f3460]/90 text-white py-4 px-6 shadow-lg">
+            <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4 w-full md:w-auto">
+                    <h1
+                        class="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold glow-text leading-snug text-center md:text-left">
+                        Ortsgruppe Luckenwalde e.V.</h1>
+                </div>
+                <div class="text-xs sm:text-sm md:text-base text-center md:text-right flex-shrink-0">
+                    <p>Gegründet 1952</p>
+                    <p>Mitglied im Landesanglerverband Brandenburg</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav
+            class="bg-[#1a3c6e]/95 backdrop-blur-md text-white shadow-lg border-b border-[#1fb9e6]/40 sticky top-0 z-50">
+            <div class="container mx-auto px-6">
+                <ul class="flex flex-col md:flex-row justify-center md:justify-start gap-1 md:gap-0">
+                    <li class="w-full md:w-auto">
+                        <a href="https://ortsgruppe-luckenwalde-ev.github.io/hauptseite/"
+                            class="block py-2 md:py-3 px-4 nav-link font-medium text-center md:text-left">Startseite</a>
+                    </li>
+                    <li class="w-full md:w-auto">
+                        <a href="ansprechpartner.html"
+                            class="block py-2 md:py-3 px-4 nav-link font-medium text-center md:text-left">Ansprechpartner</a>
+                    </li>
+
+                    <li class="w-full md:w-auto">
+                        <a href="https://ortsgruppe-luckenwalde-ev.github.io/termine/"
+                            class="block py-2 md:py-3 px-4 nav-link font-medium text-center md:text-left">Termine</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 py-8 md:py-12">
+            <div class="card p-6 md:p-8 max-w-4xl mx-auto rounded-lg">
+                <h2 class="text-2xl md:text-4xl font-bold text-[#1fb9e6] mb-8 glow-text text-center">🎣 Ansprechpartner
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Vorsitzender Card -->
+                    <div class="card p-6 md:p-8">
+                        <h3 class="text-xl md:text-2xl font-bold text-[#1fb9e6] mb-4">Vorsitzender</h3>
+                        <p class="text-[#e8e8e8] mb-2"><strong>Thomas Meske</strong></p>
+                        <p class="text-[#e8e8e8] mb-6">
+                            <a href="tel:+4916095611230"
+                                class="text-[#1fb9e6] hover:text-[#01a74a] hover:underline transition">
+                                📞 0160 - 956 11 230
+                            </a>
+                        </p>
+                        <button onclick="copyToClipboard('+4916095611230', this)"
+                            class="btn text-white font-bold py-2 px-4 rounded hover:shadow-lg transition inline-block">
+                            Kopieren
+                        </button>
+                    </div>
+
+                    <!-- Schatzmeister Card -->
+                    <div class="card p-6 md:p-8">
+                        <h3 class="text-xl md:text-2xl font-bold text-[#1fb9e6] mb-4">Schatzmeister</h3>
+                        <p class="text-[#e8e8e8] mb-2"><strong>Jack Holznagel</strong></p>
+                        <p class="text-[#e8e8e8] mb-6">
+                            <a href="tel:+4915165111237"
+                                class="text-[#1fb9e6] hover:text-[#01a74a] hover:underline transition">
+                                📞 0151 - 651 11 237
+                            </a>
+                        </p>
+                        <button onclick="copyToClipboard('+4915165111237', this)"
+                            class="btn text-white font-bold py-2 px-4 rounded hover:shadow-lg transition inline-block">
+                            Kopieren
+                        </button>
+                    </div>
+                </div>
+
+                <div class="section-divider mt-8 mb-8"></div>
+
+                <!-- Postal Address Card -->
+                <div class="card p-6 md:p-8 mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold text-[#1fb9e6] mb-4">📮 Postanschrift</h3>
+                    <p class="text-[#e8e8e8] mb-1">Jack Holznagel</p>
+                    <p class="text-[#e8e8e8] mb-1">Anglerverein Ortsgruppe Luckenwalde e.V.</p>
+                    <p class="text-[#e8e8e8] mb-1">Am Vordersee 2</p>
+                    <p class="text-[#e8e8e8]">14947 Nuthe Urstromtal</p>
+                </div>
+
+                <!-- Email Card -->
+                <div class="card p-6 md:p-8">
+                    <h3 class="text-xl md:text-2xl font-bold text-[#1fb9e6] mb-4">✉️ E-Mail Kontakt</h3>
+                    <p class="text-[#e8e8e8] mb-4">
+                        <strong>Jack Holznagel:</strong>
+                        <a href="mailto:jack-holznagel@web.de"
+                            class="text-[#1fb9e6] hover:text-[#01a74a] hover:underline transition">
+                            jack-holznagel@web.de
+                        </a>
+                    </p>
+                    <p class="text-[#e8e8e8] text-sm italic">Bitte nutzen Sie vorrangig die angegebenen Telefonnummern
+                        für dringende Anfragen.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-[#0f3460]/90 text-white py-8 mt-12 backdrop-blur-sm">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="hover:translate-y-[-5px] transition-transform hover:text-[#1fb9e6]">
+                        <h3 class="text-lg font-bold mb-4 text-[#1fb9e6]">📍 Kontakt</h3>
+                        <p class="text-gray-300">Anglerverein Ortsgruppe Luckenwalde e.V.</p>
+                        <p class="text-gray-300">Am Vordersee 2</p>
+                        <p class="text-gray-300">14947 Nuthe Urstromtal</p>
+                        <p class="mt-2 text-gray-300">jack-holznagel@web.de</p>
+                    </div>
+                    <div class="hover:translate-y-[-5px] transition-transform">
+                        <h3 class="text-lg font-bold mb-4 text-[#1fb9e6]">🔗 Schnellzugriff</h3>
+                        <ul class="space-y-2">
+                            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/hauptseite/"
+                                    class="text-gray-300 hover:text-[#1fb9e6] hover:underline transition">Startseite</a>
+                            </li>
+                            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/ansprechpartner/"
+                                    class="text-gray-300 hover:text-[#1fb9e6] hover:underline transition">Ansprechpartner</a>
+                            </li>
+
+                            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/termine/"
+                                    class="text-gray-300 hover:text-[#1fb9e6] hover:underline transition">Termine</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="border-t border-[#1fb9e6]/30 mt-8 pt-6 text-center text-sm text-gray-400">
+                    <p>&copy; 2026 Anglerverein Ortsgruppe Luckenwalde e.V. - Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </footer>
     </div>
 
-    <nav class="nav-bar">
-        <ul>
-            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/Haubtseite/">Startseite</a></li>
-            
-            <li><a href="#">Ansprechpartner</a></li>
-            
-            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/Vereinsgew-sser/">Vereinsgewässer</a></li>
-            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/Termine/">Termine</a></li>
-        </ul>
-    </nav>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Enhanced bubble effect on click
+            document.body.addEventListener('click', function (e) {
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble fixed rounded-full bg-gradient-to-br from-[#1fb9e6] to-[#01a74a] pointer-events-none';
+                bubble.style.left = `${e.clientX}px`;
+                bubble.style.top = `${e.clientY}px`;
+                bubble.style.width = '15px';
+                bubble.style.height = '15px';
+                bubble.style.transform = 'translate(-50%, -50%) scale(0)';
+                bubble.style.opacity = '0.7';
+                bubble.style.boxShadow = '0 0 15px rgba(31, 185, 230, 0.6)';
 
-    <main class="main-content-grid">
-        
-        <div class="card contact-main">
-            <h2>🎣 Vorstand / Ansprechpartner</h2>
-            <p><strong>Vorsitzender (Thomas Meske):</strong></p>
-            <p><a href="tel:+4916095611230">0160 - 956 11 230</a></p>
-            <p><strong>Schatzmeister (Jack Holznagel):</strong></p>
-            <p><a href="tel:+4915165111237">0151 - 651 11 237</a></p>
-            <a href="tel:+4916095611230" class="button primary">Vorsitzenden anrufen</a>
-        </div>
+                document.body.appendChild(bubble);
 
-        <div class="card contact-details">
-            <h2>✉️ Postanschrift / Postkasten</h2>
-            <p>Jack Holznagel</p>
-            <p>Anglerverein Ortsgruppe Luckenwalde e.V.</p>
-            <p>Am Vordersee 2</p>
-            <p>14947 Nuthe Urstromtal</p>
-        </div>
+                setTimeout(() => {
+                    bubble.style.transform = 'translate(-50%, -50%) scale(1)';
+                    bubble.style.opacity = '0';
+                }, 10);
 
-        <div class="card map-placeholder">
-            <h2>📧 E-Mail Kontakt</h2>
-            <p><strong>E-Mail (Jack Holznagel):</strong> <a href="mailto:jack-holznagel@web.de">jack-holznagel@web.de</a></p>
-            <p>Bitte nutzen Sie vorrangig die angegebenen Telefonnummern für dringende Anfragen.</p>
-        </div>
+                setTimeout(() => {
+                    bubble.remove();
+                }, 2000);
+            });
+        });
 
-    </main>
-    </body>
+        function copyToClipboard(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = btn.innerHTML;
+                btn.innerHTML = 'Kopiert! ✓';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Fehler beim Kopieren: ', err);
+            });
+        }
+        // Scroll reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('table, .card, h2').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script>
+        // GSAP animations
+        document.addEventListener('DOMContentLoaded', () => {
+            // Staggered nav animation
+            gsap.from("nav li", {
+                duration: 0.8,
+                y: 50,
+                opacity: 0,
+                stagger: 0.15,
+                ease: "back.out(1.7)"
+            });
+
+            // Card entrance
+            gsap.from(".card", {
+                duration: 0.6,
+                scale: 0.95,
+                opacity: 0,
+                ease: "power2.out",
+                delay: 0.1,
+                onComplete: function () {
+                    gsap.set(".card", { opacity: 1, scale: 1 });
+                }
+            });
+
+            // Fish swimming animation
+            gsap.to(".fish-animation", {
+                duration: 12,
+                x: "random(-200, 200, 10)",
+                y: "random(-100, 100, 10)",
+                rotation: "random(-25, 25)",
+                repeat: -1,
+                repeatRefresh: true,
+                ease: "sine.inOut",
+                onUpdate: function () {
+                    // Dynamische Farbänderung basierend auf Position
+                }
+            });
+
+            // Hover effect on table
+            document.querySelectorAll('.styled-table tbody tr').forEach(row => {
+                gsap.set(row, { transformOrigin: '50% 50%' });
+                row.addEventListener('mouseenter', () => {
+                    gsap.to(row, { duration: 0.3, scale: 1.02, ease: 'power2.out' });
+                });
+                row.addEventListener('mouseleave', () => {
+                    gsap.to(row, { duration: 0.3, scale: 1, ease: 'power2.out' });
+                });
+            });
+
+            // Fade-in up animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(30px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+
 </html>
